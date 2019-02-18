@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import TilesList from "./../Templates/Tiles-list/Tiles-list";
-import TileItem from "../Templates/Tiles-item/TileItem";
-import Home from "../Templates/Home/Home";
+import TileItem from "./../Templates/Tiles-item/TileItem";
+import Home from "./../Templates/Home/Home";
 
 
 class Routes extends Component {
