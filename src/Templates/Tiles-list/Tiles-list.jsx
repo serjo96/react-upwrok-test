@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Masonry from 'react-masonry-component';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { clickTiles } from "../../Data/Actions/Tiles-actions";
 
 class TilesList extends Component{
@@ -11,16 +11,6 @@ class TilesList extends Component{
         this.tiles = null;
     }
 
-
-    onTransitionWillStart(data) {
-        this.substrate.className = 'tile-item-substrate tile-item-substrate--active';
-        this.tiles.className = 'tiles-list-page tiles-list-page--leave';
-
-    }
-
-    onTransitionDidEnd() {
-        this.substrate.className = 'tile-item-substrate  tile-item-substrate--leave';
-    }
 
 
     getElementRef = (node) => {
@@ -46,11 +36,11 @@ class TilesList extends Component{
     render(){
         return(
             <div
-                className={`tiles-list-page ${this.props.TileBuck ? 'tiles-list-page--active' : ''}`}
+                className='tiles-list-page'
                 ref={this.getListItems}
             >
                 <Masonry
-                    className={'tiles-list'}
+                    className='tiles-list'
                 >
                     {this.props.Tiles.map((el,i)=>
                         <Link
@@ -84,4 +74,4 @@ function mapStateToProps(state) {
 }
 
 
-export default  connect( mapStateToProps, mapDispatchToProps, null, { withRef: true } )(TilesList);
+export default  connect( mapStateToProps, mapDispatchToProps )(TilesList);

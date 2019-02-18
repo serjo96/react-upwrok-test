@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
-import {clickTile} from "../../Data/Actions/Tiles-actions";
+import { Link } from 'react-router-dom';
+import { clickTile } from "../../Data/Actions/Tiles-actions";
 
 
 class TileItem extends Component{
@@ -15,32 +15,7 @@ class TileItem extends Component{
     }
 
 
-    onTransitionWillStart(data) {
-        this.setState({
-            doTransform: true,
-            position: data,
-        });
 
-    }
-
-    transitionManuallyStart() {
-        this.setState({
-            position: {
-                top: 0,
-                height: '100%',
-                width: '100%',
-                left: 0,
-                right: 0,
-            },
-            doTransform: true,
-        });
-    }
-
-    transitionManuallyStop() {
-        this.setState({
-            doTransform: false,
-        });
-    }
 
     onClickTileLink = () => {
         this.setState({
