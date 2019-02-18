@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import './App.css';
-import './style.scss';
 import Routes from "./Routes/Routes";
 
 class App extends Component {
