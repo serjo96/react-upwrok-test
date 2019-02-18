@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+.tiles-list-page{
+  &--active{
+    .tile-item {
+      transform: scale3d(-0.5, -0.5, -0.5);
+    }
+  }
+  &--leave {
+    .tile-item {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+
+}
+
+.transition-wrapper {
+  position: relative;
+  z-index: 1;
+  .transition-item {
+
+  }
+}
+
+.tile-item{
+  width: 200px;
+  display: block;
+  margin: 5px;
+  transition: transform 1s cubic-bezier(0.7, 0, 0.25, 1);
+}
+
+.transition-appear {
+  transition: transform 1s cubic-bezier(0.7, 0, 0.25, 1),
+  left 1s cubic-bezier(0.7, 0, 0.25, 1),
+  right 1s cubic-bezier(0.7, 0, 0.25, 1),
+  width 1s cubic-bezier(0.7, 0, 0.25, 1),
+  height 1s cubic-bezier(0.7, 0, 0.25, 1);
+}
+
+.single-tile{
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 50;
+  &.transition-appear {
+    transition: transform 1s cubic-bezier(0.7, 0, 0.25, 1),
+    left 1s cubic-bezier(0.7, 0, 0.25, 1),
+    right 1s cubic-bezier(0.7, 0, 0.25, 1),
+    width 1s cubic-bezier(0.7, 0, 0.25, 1),
+    height 1s cubic-bezier(0.7, 0, 0.25, 1);
+  }
+
+  &.transition-appear.transition-appear-active {
+  }
+}
+
+
+.tiles-list {
+  z-index: 2;
+
+}
+
+.single-tile{
+  transition: transform 1s cubic-bezier(0.7, 0, 0.25, 1),
+  left 1s cubic-bezier(0.7, 0, 0.25, 1),
+  right 1s cubic-bezier(0.7, 0, 0.25, 1),
+  width 1s cubic-bezier(0.7, 0, 0.25, 1),
+  height 1s cubic-bezier(0.7, 0, 0.25, 1);
+}
+
+
+  .tile-item-substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 30;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .tile-item-substrate--active{
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+  }
+
+.tile-item-substrate--leave{
+  opacity: 0;
+}
